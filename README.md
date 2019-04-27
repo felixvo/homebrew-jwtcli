@@ -2,6 +2,10 @@
 Decode/Verify and generate JWT from your terminal
 
 ## Installation
+### If you have `GO`
+```
+go get -u github.com/felixvo/jwtcli
+```
 ### Mac
 ```
 curl -L -O https://github.com/felixvo/jwtcli/raw/master/build/jwtcli_mac && chmod +x ./jwtcli_mac && mv ./jwtcli_mac /usr/local/bin/jwtcli
