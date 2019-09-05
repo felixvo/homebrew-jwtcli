@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"sort"
 	"time"
@@ -51,9 +52,13 @@ func printToken(t *jwt.Token, err error) {
 		fmt.Println(Blue(k+": "), Yellow(v))
 	}
 
-	// payload
-	fmt.Println(Bold(BrightMagenta("PAYLOAD")))
 	claims, _ := t.Claims.(jwt.MapClaims)
+	// payload json
+	fmt.Println(Bold(BrightMagenta("PAYLOAD")))
+	jsonStr, _ := json.MarshalIndent(claims, "", " ")
+	fmt.Println(White(string(jsonStr)))
+	// payload info
+	fmt.Println(Bold(BrightMagenta("INFO")))
 	keys := sortedKey(claims)
 	for _, k := range keys {
 		v := claims[k]
@@ -62,8 +67,6 @@ func printToken(t *jwt.Token, err error) {
 			fmt.Println(Blue(k+": "), formatExp(v))
 		case "iat", "nbf":
 			fmt.Println(Blue(k+": "), White(formatTime(castTime(v))))
-		default:
-			fmt.Println(Blue(k+": "), White(v))
 		}
 	}
 	// sig

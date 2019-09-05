@@ -70,7 +70,6 @@ func main() {
 					return fmt.Errorf("%v", Red(err))
 				}
 				fmt.Println(token)
-				parseToken(token, secret, method.Alg())
 				return nil
 			},
 		},
