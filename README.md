@@ -1,10 +1,10 @@
-## JWT CLI
+# JWT CLI
 
 Decode/Verify and generate JWT from your terminal
 
 ## Installation
 
-```
+```bash
 go get -u github.com/felixvo/jwtcli
 ```
 
