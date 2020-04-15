@@ -1,5 +1,5 @@
 # JWT CLI
-
+![JWT CLI](https://raw.githubusercontent.com/felixvo/homebrew-jwtcli/master/terminal.svg)  
 Decode/Verify and generate JWT from your terminal
 
 ## Installation
@@ -16,7 +16,7 @@ brew install jwtcli
 If you just want to check payload.
 
 ```bash
-jwtcli {token}
+jwtcli your-token
 ```
 
 Or with `secret`
@@ -28,7 +28,7 @@ jwtcli --secret your-secret token
 Ex:
 
 ```bash
-jwtcli -s your-256-bit-secret eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+jwtcli -s your-256-bit-secret your-token
 HEADER
 alg:  HS256
 typ:  JWT
