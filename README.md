@@ -5,7 +5,8 @@ Decode/Verify and generate JWT from your terminal
 ## Installation
 
 ```bash
-go get -u github.com/felixvo/jwtcli
+brew tap felixvo/jwtcli
+brew install jwtcli
 ```
 
 ## Usage
