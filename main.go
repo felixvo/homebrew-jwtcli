@@ -20,12 +20,12 @@ func main() {
 	app.Version = "1.0.0"
 	//  Global Flags
 	app.Flags = []cli.Flag{
-		cli.StringFlag{
+		&cli.StringFlag{
 			Name:  "alg",
 			Value: "HS256",
 			Usage: "Signed method",
 		},
-		cli.StringFlag{
+		&cli.StringFlag{
 			Name:  "secret, s",
 			Value: "",
 			Usage: "Secret key",
@@ -38,13 +38,13 @@ func main() {
 		parseToken(c.Args().Get(0), c.String("secret"), c.String("alg"))
 		return nil
 	}
-	app.Commands = []cli.Command{
+	app.Commands = []*cli.Command{
 		{
 			Name:    "sign",
 			Aliases: []string{"s"},
 			Usage:   "sign new jwt token",
 			Flags: []cli.Flag{
-				cli.StringFlag{
+				&cli.StringFlag{
 					Name:  "payload, p",
 					Value: "{}",
 					Usage: "JSON payload of jwt token",
@@ -60,11 +60,11 @@ func main() {
 				if err != nil {
 					return fmt.Errorf("%v", Red(err))
 				}
-				method := jwt.GetSigningMethod(c.GlobalString("alg"))
+				method := jwt.GetSigningMethod(c.String("alg"))
 				if method == nil {
 					return fmt.Errorf("%v", Red("invalid alg"))
 				}
-				secret := c.GlobalString("secret")
+				secret := c.String("secret")
 				token, err := signToken(jwtData, method, secret)
 				if err != nil {
 					return fmt.Errorf("%v", Red(err))
