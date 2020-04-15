@@ -1,5 +1,5 @@
 # JWT CLI
-<div style="text-align:center;"><img src="https://raw.githubusercontent.com/felixvo/homebrew-jwtcli/master/terminal.svg" alt="JWT CLI" width="400px" height="400px" /></div>
+<div style="text-align:center;" width="100%"><img src="https://raw.githubusercontent.com/felixvo/homebrew-jwtcli/master/terminal.svg" alt="JWT CLI" width="600px" height="400px" /></div>
 
 Decode/Verify and generate JWT from your terminal
 
