@@ -1,5 +1,5 @@
 # JWT CLI
-![JWT CLI](./terminal.svg)
+![JWT CLI](./terminal.png)
 
 Decode/Verify and generate JWT from your terminal
 
